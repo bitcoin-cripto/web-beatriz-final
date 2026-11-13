@@ -68,6 +68,9 @@ ul,ol{margin:0;padding:0;list-style:none}
 .header .wrap{position:relative}
 .header .wrap{display:flex;align-items:center;justify-content:space-between;gap:1.5rem}
 .brand{text-decoration:none;display:flex;flex-direction:column;line-height:1.05}
+.brand--logo{flex-direction:row;align-items:center;gap:.7rem}
+.brand-mark{flex:none;width:34px;height:42px}
+.brand-text{display:flex;flex-direction:column;line-height:1.05}
 .brand-name{font-family:var(--serif);font-size:1.7rem;font-weight:500;letter-spacing:-.02em}
 .brand-tag{font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-soft);margin-top:.2rem}
 .nav ul{display:flex;gap:clamp(1rem,2vw,2rem)}
