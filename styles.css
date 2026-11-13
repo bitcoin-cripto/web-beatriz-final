@@ -210,8 +210,9 @@ ul,ol{margin:0;padding:0;list-style:none}
 .online-grid .lead{margin-top:1.4rem}
 .online-list{display:grid;grid-template-columns:1fr 1fr;gap:.9rem;background:var(--sage-50);border:1px solid var(--sage-200);border-radius:30px;padding:clamp(1rem,2vw,1.5rem)}
 .online-list li{background:var(--white);border:1px solid var(--line);border-radius:20px;padding:1.3rem 1.2rem 1.4rem;display:flex;flex-direction:column;gap:.35rem}
-.online-list .dot{width:2rem;height:2rem;border-radius:50%;background:var(--sage-50);border:1px solid var(--sage-200);display:grid;place-items:center;color:var(--sage-700);font-size:.75rem;font-weight:700;margin-bottom:.6rem}
-.online-list h3{font-size:1.1rem;font-family:var(--sans);font-weight:600;letter-spacing:0;line-height:1.25}
+.online-h{display:flex;align-items:center;gap:.7rem;margin-bottom:.2rem}
+.online-list .dot{flex:none;width:2rem;height:2rem;border-radius:50%;background:var(--sage-50);border:1px solid var(--sage-200);display:grid;place-items:center;color:var(--sage-700);font-size:.75rem;font-weight:700}
+.online-list h3{font-size:1.05rem;font-family:var(--sans);font-weight:700;letter-spacing:0;line-height:1.25}
 .online-list p{color:var(--ink-soft);font-size:.93rem;line-height:1.55}
 @media (max-width:480px){.online-list{grid-template-columns:1fr}}
 @media (max-width:860px){.online-grid{grid-template-columns:1fr}}
