@@ -139,8 +139,7 @@ ul,ol{margin:0;padding:0;list-style:none}
 .lessons-head{display:grid;grid-template-columns:1fr 1fr;gap:2rem 4rem;align-items:end;margin-bottom:clamp(2.5rem,5vw,4rem)}
 .lessons-head .lead{max-width:30em}
 .lessons-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
-.lesson{display:flex;flex-direction:column;gap:1.4rem;padding:clamp(1.6rem,2.6vw,2.2rem);border-radius:26px;background:var(--white);border:1px solid var(--line);position:relative;transition:transform .3s,box-shadow .3s}
-.lesson:hover{transform:translateY(-3px);box-shadow:0 18px 40px -22px rgba(58,47,40,.35)}
+.lesson{display:flex;flex-direction:column;gap:1.4rem;padding:clamp(1.6rem,2.6vw,2.2rem);border-radius:26px;background:var(--white);border:1px solid var(--line);position:relative}
 .lesson--exam{background:var(--sage-50);border-color:var(--sage-200)}
 .lesson--wide{grid-column:1/-1;background:rgba(233,195,176,.32);border-color:rgba(185,88,58,.22);display:grid;grid-template-columns:1fr 2fr;gap:1.4rem clamp(2rem,5vw,4.5rem);align-items:start}
 .lesson-top{display:flex;flex-direction:column;gap:1.1rem;align-items:flex-start}
@@ -310,8 +309,19 @@ ul,ol{margin:0;padding:0;list-style:none}
 /* ───────── Reveal (solo con JS y sin reduced-motion) ───────── */
 .js .reveal{opacity:0;transform:translateY(22px);transition:opacity .8s ease,transform .8s ease}
 .js .reveal.is-in{opacity:1;transform:none}
+/* Tarjetas de «Mis clases»: elevación con ratón, pulsación y tarjeta central en pantallas táctiles */
+.js .lesson.is-in{transition:opacity .8s ease,transform .35s ease,box-shadow .35s ease,border-color .35s ease}
+@media (hover:hover){.js .lesson.is-in:hover{transform:translateY(-4px);box-shadow:0 18px 40px -22px rgba(58,47,40,.4)}}
+@media (hover:none){
+  .js .lesson.reveal{transform:translateY(46px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.7,.2,1)}
+  .js .lesson.reveal.is-in{transform:none;transition:opacity .9s ease,transform .4s ease,box-shadow .4s ease,border-color .4s ease}
+  .js .lesson.is-in:active{transform:scale(.965);box-shadow:none}
+  .js .lesson.is-in.is-center{transform:translateY(-5px);box-shadow:0 20px 40px -20px rgba(58,47,40,.4);border-color:rgba(185,88,58,.45)}
+  .js .lesson.is-in.is-center:active{transform:translateY(-5px) scale(.965)}
+}
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   .js .reveal{opacity:1;transform:none;transition:none}
+  .js .lesson.is-in,.js .lesson.is-in.is-center{transition:none;transform:none}
   *{animation:none !important}
 }

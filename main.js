@@ -46,6 +46,12 @@
     /* Reveal */
     const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); } }), { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
     $$('.reveal').forEach((el) => io.observe(el));
+
+    /* Pantallas táctiles: la tarjeta de «Mis clases» que queda en el centro se eleva */
+    if (window.matchMedia('(hover:none)').matches && !window.matchMedia('(prefers-reduced-motion:reduce)').matches) {
+      const mid = new IntersectionObserver((es) => es.forEach((e) => e.target.classList.toggle('is-center', e.isIntersecting)), { rootMargin: '-42% 0px -42% 0px' });
+      $$('.lesson').forEach((el) => mid.observe(el));
+    }
   } else { $$('.reveal').forEach((el) => el.classList.add('is-in')); }
 
   /* Formulario */
