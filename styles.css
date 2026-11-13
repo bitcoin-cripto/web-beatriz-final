@@ -73,6 +73,9 @@ ul,ol{margin:0;padding:0;list-style:none}
 .brand-text{display:flex;flex-direction:column;line-height:1.05}
 .brand-name{font-family:var(--serif);font-size:1.7rem;font-weight:500;letter-spacing:-.02em}
 .brand-tag{font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-soft);margin-top:.2rem}
+.brand-tag span{white-space:nowrap}
+@media (max-width:1020px){.brand-tag span{display:block}}
+@media (max-width:400px){.brand-tag{letter-spacing:.12em}.header .wrap{gap:.6rem}.header-tools{gap:.6rem}.brand--logo{gap:.55rem}}
 .nav ul{display:flex;gap:clamp(1rem,2vw,2rem)}
 .nav a{text-decoration:none;font-size:.93rem;font-weight:500;color:var(--ink-soft);padding:.4rem 0;border-bottom:1.5px solid transparent;transition:color .2s,border-color .2s}
 .nav a:hover,.nav a[aria-current="true"]{color:var(--ink);border-color:var(--terracotta)}
